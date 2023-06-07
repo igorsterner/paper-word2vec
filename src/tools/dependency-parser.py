@@ -6,23 +6,13 @@ from tqdm import tqdm
 import csv
 import pickle
 
-import logging
-from logging.handlers import RotatingFileHandler
-from logging import Formatter
-
-log_path = "logging"
-
-logger = logging.getLogger(__name__)
-
-from main import initialization
-
 # gpu = spacy.prefer_gpu()
 # print(gpu)
 
-logger.info("Loading NLP model...")
+print("Loading NLP model...")
 nlp = spacy.load("en_core_web_sm")
 
-logger.info("Loading corpus...")
+print("Loading corpus...")
 sentences = []
 with open(
     "data/eng_wikipedia_2016_1M/eng_wikipedia_2016_1M-sentences.txt",
@@ -36,7 +26,7 @@ with open(
 
 dependency_triples = []
 
-logger.info("Parsing sentences...")
+print("Parsing sentences...")
 
 start = time.time()
 
@@ -64,8 +54,8 @@ for i, sentence in tqdm(enumerate(sentences)):
 
 end = time.time()
 
-logger.info(end - start)
-logger.info(len(dependency_triples))
+print(end - start)
+print(len(dependency_triples))
 
 if dependency_triples:
     with open(f"data/dependencies_remaining.pkl", "wb") as f:

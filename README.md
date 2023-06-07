@@ -1,8 +1,11 @@
-# Paper Implementation - Neural Word Embedding as Implicit Matrix Factorization (Levy and Goldberg, 2014)
+# Paper Implementation
+
+This repo contains an implementation of [Neural Word Embedding as Implicit Matrix Factorization](https://papers.nips.cc/paper_files/paper/2014/hash/feab05aa91085b7a8012516bc3533958-Abstract.html) by Omer Levy and Yoav Goldberg.
+
 
 ## Citation
 
-```
+```sql
 @inproceedings{NIPS2014_feab05aa,
  author = {Levy, Omer and Goldberg, Yoav},
  booktitle = {Advances in Neural Information Processing Systems},
@@ -41,5 +44,23 @@ python src/main.py
 ### Visualisations
 
 ```
-python src/tools/theasarus.py
+python src/tools/theasarus.py --word money
+
+```
+
+#### Example similarities
+
+Words most similar to `money`:
+
+```txt
+[('resources', 0.12),
+ ('capital', 0.11),
+ ('paper', 0.11),
+ ('property', 0.1),
+ ('total', 0.1),
+ ('value', 0.09),
+ ('cards', 0.09),
+ ('time', 0.09),
+ ('knowledge', 0.09),
+ ('products', 0.09)]
 ```

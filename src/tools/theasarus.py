@@ -3,16 +3,7 @@ from pprint import pprint
 import argparse
 import os
 
-import logging
-from logging.handlers import RotatingFileHandler
-from logging import Formatter
-
-log_path = "logging"
-
-logger = logging.getLogger(__name__)
-
-from main import initialization
-
+print("Hello")
 with open("thesauri/svd_noun/results_d300_k1.pkl", "rb") as f:
     theasarus = pickle.load(f)
 
@@ -58,13 +49,11 @@ if __name__ == "__main__":
     parser.add_argument("--find_rnns")
     args = parser.parse_args()
 
-    initialization()
-
     if args.word:
-        logging.info(f"Original word: {args.word}")
+        print(f"Original word: {args.word}")
         pprint(query_theasarus(args.word, sim=True))
     elif args.find_rnns:
-        logging.info("Finding RNNs like the paper")
+        print("Finding RNNs like the paper")
         rnns()
 
     # write_theasarus()
