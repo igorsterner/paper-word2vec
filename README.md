@@ -18,8 +18,16 @@ This repo contains an implementation of [Neural Word Embedding as Implicit Matri
  year = {2014}
 }
 ```
+## Table of Contents
 
-### Data
+- [Dataset](#dataset)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Visualisation](#visualisation)
+- [Example Output](#example-output)
+
+
+### Dataset
 
 ```
 mkdir data
@@ -28,14 +36,22 @@ wget https://downloads.wortschatz-leipzig.de/corpora/eng_news-typical_2016_1M.ta
 tar -xvzf eng_news-typical_2016_1M.tar.gz
 ```
 
-### Parsing
+### Installation
+
+```
+pip install -r requirements.txt
+```
+
+### Usage
+
+Preparations:
 
 ```
 python src/tools/dependency-parser.py
 python src/tools/pair-data.py
 ```
 
-### Word2Vec
+Main script:
 
 ```
 python src/main.py
@@ -45,10 +61,10 @@ python src/main.py
 
 ```
 python src/tools/theasarus.py --word money
-
+python src/tools/theasarus.py --find_rnns 1
 ```
 
-#### Example similarities
+#### Examples
 
 Words most similar to `money`:
 
