@@ -24,7 +24,7 @@ This repo contains an implementation of [Neural Word Embedding as Implicit Matri
 - [Installation](#installation)
 - [Usage](#usage)
 - [Visualisation](#visualisation)
-- [Example Output](#example-output)
+- [Examples](#examples)
 
 
 ### Dataset
@@ -57,7 +57,7 @@ Main script:
 python src/main.py
 ```
 
-### Visualisations
+### Visualisation
 
 ```
 python src/tools/theasarus.py --word money
